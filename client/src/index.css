@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+/*
+ * Stablecoin Payroll Platform — UI Tokens
+ *
+ * All brand colors live here as CSS custom properties.
+ * To re-brand: change the accent palette variables below and nothing else.
+ *
+ * Default palette (customize to match your brand):
+ *   --accent     (#B794F4)  — primary CTA, highlights
+ *   --accent-2   (#7BB8E8)  — secondary accent, data visualization
+ *   --bg-app     (#F6F2EA)  — page background (cream)
+ *   --ink        (#0A0A0A)  — type, borders
+ *   --ok / --warn / --error — semantic status colors
+ */
+:root {
+  /* ── Accent palette (CUSTOMIZE THESE) ────────────── */
+  --accent:       #B794F4;
+  --accent-soft:  #D6BFF9;
+  --accent-deep:  #8E63E5;
+
+  --accent-2:      #7BB8E8;
+  --accent-2-soft: #A9D0EE;
+  --accent-2-deep: #4F9BD6;
+
+  /* ── Neutral base ────────────────────────────────── */
+  --cream:  #F6F2EA;
+  --paper:  #FFFFFF;
+  --ink:    #0A0A0A;
+  --ink-2:  #2A2A2A;
+  --muted:  #6B6B6B;
+
+  /* ── Neon glow accents (drop-shadow only) ─────────── */
+  --neon-cyan:     #2BE6FF;
+  --neon-magenta:  #FF3DCB;
+  --neon-lavender: #C58BFF;
+
+  /* ── Highlight swipes (behind headline type) ──────── */
+  --swipe-pink:     #FFB8E0;
+  --swipe-sky:      #BFE0FA;
+  --swipe-lavender: #D6BFF9;
+  --swipe-yellow:   #FFE680;
+
+  /* ── Status ──────────────────────────────────────── */
+  --ok:    #2FBF71;
+  --warn:  #F59E0B;
+  --error: #EF4444;
+  --info:  #3B82F6;
+
+  /* ── Color ramps (accent-anchored) ───────────────── */
+  --accent-50:  #F5EFFE;
+  --accent-100: #EAE0FB;
+  --accent-200: #D6BFF9;
+  --accent-300: #B794F4;
+  --accent-400: #A07FE6;
+  --accent-500: #8E63E5;
+  --accent-600: #7549D1;
+  --accent-700: #5C36AC;
+  --accent-800: #432580;
+  --accent-900: #2C1854;
+
+  --accent-2-50:  #EAF4FC;
+  --accent-2-100: #D6E8F7;
+  --accent-2-200: #BFDCF1;
+  --accent-2-300: #A9D0EE;
+  --accent-2-400: #7BB8E8;
+  --accent-2-500: #4F9BD6;
+  --accent-2-600: #2F7DB8;
+  --accent-2-700: #225E89;
+  --accent-2-800: #15405E;
+  --accent-2-900: #0B2438;
+
+  /* Neutral ramp */
+  --neutral-50:  #F6F2EA;
+  --neutral-100: #ECE7DD;
+  --neutral-200: #D9D2C5;
+  --neutral-300: #B8B1A4;
+  --neutral-400: #88827A;
+  --neutral-500: #6B6B6B;
+  --neutral-600: #4F4F4F;
+  --neutral-700: var(--ink);
+  --neutral-800: #050505;
+  --neutral-900: #000000;
+
+  /* ── Semantic surfaces ────────────────────────────── */
+  --bg-app:            var(--cream);
+  --bg-surface:        var(--paper);
+  --bg-surface-subtle: #FBF8F1;
+  --bg-surface-raised: var(--paper);
+  --bg-accent-soft:    rgba(183, 148, 244, 0.12);
+
+  --border-subtle:  rgba(10, 10, 10, 0.08);
+  --border-default: rgba(10, 10, 10, 0.14);
+  --border-strong:  rgba(10, 10, 10, 0.30);
+
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-2);
+  --text-muted:     var(--muted);
+  --text-inverse:   var(--paper);
+
+  /* ── Tailwind color remaps (routes Tailwind classes to brand palette) */
+  --color-emerald-50:  #EAF7F0;
+  --color-emerald-100: #D6F0DF;
+  --color-emerald-200: #B4E2C2;
+  --color-emerald-300: #87D0A0;
+  --color-emerald-400: #5CBC83;
+  --color-emerald-500: var(--ok);
+  --color-emerald-600: #279E5E;
+  --color-emerald-700: #1F7E4A;
+  --color-emerald-800: #18603A;
+  --color-emerald-900: #103F26;
+
+  --color-teal-50:  var(--color-emerald-50);
+  --color-teal-100: var(--color-emerald-100);
+  --color-teal-200: var(--color-emerald-200);
+  --color-teal-300: var(--color-emerald-300);
+  --color-teal-400: var(--color-emerald-400);
+  --color-teal-500: var(--ok);
+  --color-teal-600: var(--color-emerald-600);
+  --color-teal-700: var(--color-emerald-700);
+  --color-teal-800: var(--color-emerald-800);
+  --color-teal-900: var(--color-emerald-900);
+
+  --color-cyan-50:  var(--accent-2-50);
+  --color-cyan-100: var(--accent-2-100);
+  --color-cyan-200: var(--accent-2-200);
+  --color-cyan-300: var(--accent-2-300);
+  --color-cyan-400: var(--accent-2);
+  --color-cyan-500: var(--accent-2);
+  --color-cyan-600: var(--accent-2-deep);
+  --color-cyan-700: #3A78A4;
+  --color-cyan-800: #225E89;
+  --color-cyan-900: #15405E;
+
+  --color-purple-50:  var(--accent-50);
+  --color-purple-100: var(--accent-100);
+  --color-purple-200: var(--accent-200);
+  --color-purple-300: var(--accent-300);
+  --color-purple-400: var(--accent);
+  --color-purple-500: var(--accent);
+  --color-purple-600: var(--accent-500);
+  --color-purple-700: var(--accent-600);
+  --color-purple-800: var(--accent-700);
+  --color-purple-900: var(--accent-800);
+
+  --color-indigo-50:  var(--accent-50);
+  --color-indigo-100: var(--accent-100);
+  --color-indigo-200: var(--accent-200);
+  --color-indigo-300: var(--accent-300);
+  --color-indigo-400: var(--accent);
+  --color-indigo-500: var(--accent);
+  --color-indigo-600: var(--accent-500);
+  --color-indigo-700: var(--accent-600);
+  --color-indigo-800: var(--accent-700);
+  --color-indigo-900: var(--accent-800);
+
+  --color-pink-50:  #FFF1F8;
+  --color-pink-100: #FFE0EE;
+  --color-pink-200: var(--swipe-pink);
+  --color-pink-300: #FFA0CC;
+  --color-pink-400: var(--neon-magenta);
+  --color-pink-500: var(--neon-magenta);
+  --color-pink-600: #D62FA8;
+  --color-pink-700: #A8237F;
+  --color-pink-800: #791A5A;
+  --color-pink-900: #4D1039;
+
+  --color-amber-50:  #FFF7E6;
+  --color-amber-100: #FCEBC4;
+  --color-amber-200: #F9D788;
+  --color-amber-300: #F8C857;
+  --color-amber-400: var(--warn);
+  --color-amber-500: var(--warn);
+  --color-amber-600: #C97D08;
+  --color-amber-700: #7C3F08;
+  --color-amber-800: #5A2C05;
+  --color-amber-900: #3A1B03;
+
+  --color-red-50:  #FEF1F1;
+  --color-red-100: #FCDADA;
+  --color-red-200: #F8B6B6;
+  --color-red-300: #F38383;
+  --color-red-400: var(--error);
+  --color-red-500: var(--error);
+  --color-red-600: #C92E2E;
+  --color-red-700: #8E1F1F;
+  --color-red-800: #631515;
+  --color-red-900: #3A0B0B;
+
+  /* ── Brand semantic aliases (used by components) ──── */
+  --primary:        var(--accent);
+  --primary-hover:  var(--accent-500);
+  --primary-soft:   rgba(183, 148, 244, 0.18);
+  --primary-glow:   rgba(183, 148, 244, 0.35);
+  --primary-300:    var(--accent-300);
+  --primary-500:    var(--accent-500);
+
+  --secondary:      var(--accent-2);
+  --secondary-soft: rgba(123, 184, 232, 0.18);
+
+  --tertiary:       var(--accent);
+  --tertiary-soft:  var(--primary-soft);
+  --tertiary-glow:  var(--primary-glow);
+
+  --success:       var(--ok);
+  --success-soft:  rgba(47, 191, 113, 0.14);
+  --warn-soft:     rgba(245, 158, 11, 0.14);
+  --danger:        var(--error);
+  --danger-soft:   rgba(239, 68, 68, 0.14);
+
+  /* ── Spacing ──────────────────────────────────────── */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+
+  /* ── Radii ────────────────────────────────────────── */
+  --radius-sm: 6px; --radius: 6px; --radius-lg: 12px;
+  --radius-xl: 20px; --radius-pill: 999px;
+
+  /* ── Shadows ──────────────────────────────────────── */
+  --shadow-card:    0 12px 40px -12px rgba(10, 10, 10, 0.18);
+  --shadow-pop:     0 8px 24px -8px var(--primary-glow);
+  --shadow-overlay: 0 12px 40px -12px rgba(10, 10, 10, 0.25);
+  --shadow-hard:    6px 6px 0 0 var(--ink);
+  --shadow-hard-sm: 3px 3px 0 0 var(--ink);
+
+  /* ── Typography ───────────────────────────────────── */
+  --text-xs: 0.75rem; --text-sm: 0.8125rem; --text-base: 1rem;
+  --text-lg: 1.125rem; --text-xl: 1.25rem;
+  --text-2xl: 1.75rem; --text-3xl: 2.25rem;
+
+  --font-display: "Archivo Black", Impact, sans-serif;
+  --font-sans:    "Archivo", "Inter", system-ui, sans-serif;
+  --font-serif:   "Fraunces", Georgia, serif;
+  --font-marker:  "Caveat", cursive;
+
+  --z-dropdown: 40; --z-sticky: 50; --z-tooltip: 60;
+  --z-popover: 70; --z-modal: 80; --z-notification: 90;
+
+  --duration-fast: 0.15s; --duration-normal: 0.25s; --duration-slow: 0.4s;
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --focus-ring: 0 0 0 3px var(--primary-soft);
+  --page-pad-x: 1rem;
+  --page-pad-y: 1rem;
+}
+
+@media (min-width: 768px)  { :root { --page-pad-x: 1.5rem; --page-pad-y: 1.5rem; } }
+@media (min-width: 1024px) { :root { --page-pad-x: 2rem;   --page-pad-y: 2rem;   } }
+
+/* Backward-compat aliases for components that reference old --lavender / --sky names */
+:root {
+  --lavender: var(--accent);
+  --lavender-soft: var(--accent-soft);
+  --lavender-deep: var(--accent-deep);
+  --lilac-50: var(--accent-50); --lilac-100: var(--accent-100);
+  --lilac-200: var(--accent-200); --lilac-300: var(--accent-300);
+  --lilac-400: var(--accent-400); --lilac-500: var(--accent-500);
+  --lilac-600: var(--accent-600); --lilac-700: var(--accent-700);
+  --lilac-800: var(--accent-800); --lilac-900: var(--accent-900);
+  --sky: var(--accent-2); --sky-soft: var(--accent-2-soft); --sky-deep: var(--accent-2-deep);
+  --sky-50: var(--accent-2-50); --sky-100: var(--accent-2-100);
+  --sky-200: var(--accent-2-200); --sky-300: var(--accent-2-300);
+  --sky-400: var(--accent-2-400); --sky-500: var(--accent-2-500);
+  --sky-600: var(--accent-2-600); --sky-700: var(--accent-2-700);
+  --sky-800: var(--accent-2-800); --sky-900: var(--accent-2-900);
+  --slate-50: #F1F1EE; --slate-100: #E2E2DD; --slate-200: #C8C8C1;
+  --slate-300: #9E9E96; --slate-400: var(--muted); --slate-500: #4F4F4A;
+  --slate-600: #3A3A36; --slate-700: var(--ink-2); --slate-800: var(--ink-2);
+  --slate-900: var(--ink);
+}
+
+@layer base {
+  html { color-scheme: light; }
+  body {
+    background: var(--bg-app);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  h1, h2 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  h3, h4  { font-family: var(--font-sans); font-weight: 800; }
+  button  { transition: all 0.18s ease; }
+  input, textarea, select { transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+
+  ::-webkit-scrollbar       { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(10,10,10,0.12); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(10,10,10,0.24); }
+}
+
+/* ── Typography helpers ─────────────────────────────────────────────── */
+.serif-italic { font-family: var(--font-serif); font-style: italic; font-weight: 500; }
+.eyebrow      { font-family: var(--font-sans); font-weight: 800; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.marker       { font-family: var(--font-marker); font-weight: 700; }
+
+.swipe            { background-image: linear-gradient(transparent 55%, var(--swipe-lavender) 55%, var(--swipe-lavender) 92%, transparent 92%); background-repeat: no-repeat; padding: 0 0.1em; }
+.swipe--sky       { background-image: linear-gradient(transparent 55%, var(--swipe-sky)      55%, var(--swipe-sky)      92%, transparent 92%); }
+.swipe--pink      { background-image: linear-gradient(transparent 55%, var(--swipe-pink)     55%, var(--swipe-pink)     92%, transparent 92%); }
+.swipe--lavender  { background-image: linear-gradient(transparent 55%, var(--swipe-lavender) 55%, var(--swipe-lavender) 92%, transparent 92%); }
+.swipe--yellow    { background-image: linear-gradient(transparent 55%, var(--swipe-yellow)   55%, var(--swipe-yellow)   92%, transparent 92%); }
+
+/* ── Surface helpers ────────────────────────────────────────────────── */
+.surface        { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.surface-subtle { background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius); }
+.surface-raised { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+
+/* ── Button classes ─────────────────────────────────────────────────── */
+.btn-primary   { display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:var(--radius-pill);font-size:.875rem;font-weight:700;cursor:pointer;border:2px solid var(--ink);background:var(--accent);color:var(--ink);transition:all .18s ease; }
+.btn-primary:hover:not(:disabled)   { background:var(--accent-400); box-shadow:0 6px 20px var(--primary-glow); }
+.btn-primary:disabled { opacity:.4;cursor:not-allowed; }
+
+.btn-secondary { display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:var(--radius-pill);font-size:.875rem;font-weight:700;cursor:pointer;border:2px solid var(--ink);background:var(--paper);color:var(--ink);transition:all .18s ease; }
+.btn-secondary:hover:not(:disabled) { background:var(--cream); }
+.btn-secondary:disabled { opacity:.4;cursor:not-allowed; }
+
+.btn-inverted  { display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:var(--radius-pill);font-size:.875rem;font-weight:700;cursor:pointer;border:2px solid var(--ink);background:var(--ink);color:var(--paper);transition:all .18s ease; }
+.btn-inverted:hover:not(:disabled)  { background:var(--ink-2); }
+.btn-inverted:disabled { opacity:.4;cursor:not-allowed; }
+
+.btn-outlined  { display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:var(--radius-pill);font-size:.875rem;font-weight:600;cursor:pointer;background:transparent;border:1.5px solid var(--ink);color:var(--ink);transition:all .18s ease; }
+.btn-outlined:hover:not(:disabled)  { background:var(--ink);color:var(--paper); }
+.btn-outlined:disabled { opacity:.4;cursor:not-allowed; }
+
+/* Sticker label */
+.sticker { display:inline-block;background:var(--paper);border:2px solid var(--ink);padding:6px 12px;font-weight:800;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase; }
+
+/* Numeric table cells */
+table .font-mono, td.font-mono, .font-mono.tabular-nums { font-variant-numeric:tabular-nums; }
+
+/* Form field */
+.field { width:100%;padding:.625rem .875rem;border-radius:var(--radius-sm);font-size:.875rem;background:var(--paper);border:1.5px solid var(--ink);color:var(--text-primary);outline:none;transition:border-color .15s ease,box-shadow .15s ease; }
+.field::placeholder { color:var(--text-muted); }
+.field:focus { border-color:var(--accent-500);box-shadow:0 0 0 3px var(--primary-soft); }
+
+/* Legacy status color passthrough */
+.text-emerald-400, .text-emerald-500, .text-emerald-600, .text-emerald-700 { color:var(--ok) !important; }
+.bg-emerald-50, .bg-emerald-100 { background-color:rgba(47,191,113,.12) !important; }
+
+/* Masonry layout */
+.bento-masonry           { display:flex;margin-left:-16px;width:auto; }
+.bento-masonry__col      { padding-left:16px;background-clip:padding-box; }
+.bento-masonry__col > *  { margin-bottom:16px; }
